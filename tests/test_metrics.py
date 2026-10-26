@@ -1,4 +1,4 @@
-from sales_analysis import monthly_revenue, total_revenue
+from sales_analysis import monthly_revenue, total_revenue, average_order_value
 
 ROWS = [
     {"date": "2024-01-05", "product": "Widget", "quantity": 2, "unit_price": 10.0, "region": "North"},
@@ -17,3 +17,6 @@ def test_total_revenue_empty():
 
 def test_monthly_revenue():
     assert monthly_revenue(ROWS) == {"2024-01": 45.5, "2024-02": 35.0}
+
+def test_average_order_value():
+    assert average_order_value(ROWS) == 26.83
